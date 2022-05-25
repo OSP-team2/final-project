@@ -1,0 +1,18 @@
+            .main{
+                font-size:500%;
+                text-align:center;
+            }
+            .line{
+               border:15px solid #6FADCF;
+            }
+            .back{
+            <!--it대학 뒤 배경 사진 주소넣기!!!!-->
+
+                background-image: url();
+                background-repeat:no-repeat;
+                background-size: cover;
+            }
+
+.navbar__icons{
+
+}
