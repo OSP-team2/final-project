@@ -14,8 +14,15 @@ def electronics():
 
 @app.route('/computer')
 def computer():
+    url = u'https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317400'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, "html.parser")
 
-    return render_template('computer.html')
+    computer_intro = soup.select('.bg_gr')[0].text
+    computer_prop = soup.select('.bx1_wh')[2].text
+    computer_job = soup.select('.bx1_wh')[4].text
+    
+    return render_template('computer.html', intro=computer_intro, prop=computer_prop, job=computer_job)
 
 @app.route('/electric')
 def electric():
