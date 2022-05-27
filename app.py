@@ -10,7 +10,15 @@ def index():
 
 @app.route('/electronics')
 def electronics():
-    return render_template('electronics.html')
+    url = u'https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317397'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, "html.parser")
+
+    electronics_intro = soup.select('.bg_gr')[0].text
+    electronics_prop = soup.select('.bx1_wh')[2].text
+    electronics_job = soup.select('.bx1_wh')[4].text
+
+    return render_template('electronics.html', intro=electronics_intro, prop=electronics_prop, job=electronics_job)
 
 @app.route('/computer')
 def computer():
@@ -32,7 +40,7 @@ def electric():
 
     electric_intro = soup.select('.bg_gr')[0].text
     electric_prop = soup.select('.bx1_wh')[2].text
-    electric_job = soup.select('.bx1_wh')[4].text
+    electric_job = soup.select('.bx1_wh')[3].text
     return render_template('electric.html', intro=electric_intro, prop=electric_prop, job=electric_job)
 
 @app.route('/mobile')
