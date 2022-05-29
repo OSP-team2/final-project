@@ -1,0 +1,30 @@
+.nav{
+                background-color:#6FADCF;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+            }
+            .nav li{
+                display:inline;
+
+            }
+            .nav li a{
+                    display: block;
+                    background-color:#6FADCF;
+                    color: #000000;
+                    padding: 20px;
+                    width: 243px;
+                    text-decoration: none;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size:26px
+            }
+            .nav li a.current{
+                    background-color: #0D47A1;
+                    color: white;
+            }
+            .nav li a:hover:not(.current){
+                    background-color: #0D47A1;
+                    color: white;
+            }

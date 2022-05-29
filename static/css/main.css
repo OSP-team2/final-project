@@ -1,0 +1,17 @@
+ .main{
+                font-size:450%;
+                text-align:center;
+            }
+            .line{
+               border:15px solid #6FADCF;
+            }
+            .back{
+
+                background-image: url();
+                background-repeat:no-repeat;
+                background-size: cover;
+            }
+
+.navbar__icons{
+
+}
