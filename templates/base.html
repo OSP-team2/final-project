@@ -5,27 +5,43 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- CSS only -->
+
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
             crossorigin="anonymous"
         />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
         <title>IT대학 소개</title>
     </head>
     <body>
-        <header>IT대학</header>
-        <nav class="navbar navbar-expand-sm bg-light">
-            <div class="container-fluid">
-                <ul class="navbar-nav">
+        <header>
+             <div class ="line"></div>
+            <div class="back">
+            <div class="main">
+                <img src="../static/img/knumark.jpg" alt=""width="150" height="150">
+                <b>IT대학</b>
+            </div>
+            </div>
+        </header>
+
+
+
+
+                <ul class="nav">
+                    <img src="../static/img/it.png" alt=""width="300" height="85">
                     <li><a class="navbar-brand" href="{{ url_for('index') }}">홈</a></li>
                     <li><a class="navbar-brand" href="{{ url_for('electronics') }}">전자공학부</a></li>
                     <li><a class="navbar-brand" href="{{ url_for('computer') }}">컴퓨터학부</a></li>
                     <li><a class="navbar-brand" href="{{ url_for('electric') }}">전기공학과</a></li>
                     <li><a class="navbar-brand" href="{{ url_for('mobile') }}">모바일공학과</a></li>
                 </ul>
-            </div>
-        </nav>
+
+
+
         {% block content %}
         <!-- 다른 컨텐츠들이 표시되는 부분 -->
         {% endblock %}
