@@ -39,27 +39,25 @@
 <section>
     <div><a href="#toc" id="s-2">2</a>. Grade</div>
 
-    <div><a href="#toc" id="s-2-1">2-1</a>. 정시 2021</div>
-    <p>
-        <img
-            src={{ grade_21 }}
-            alt="전기공학과 정시 2021"
-        />
-    </p>
+    <form  method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.grade.label }}
+        {{ form.grade }}
+        {{ form.submit() }}
+    </form>
 
-    <div><a href="#toc" id="s-2-2">2-2</a>. 정시 2020</div>
     <p>
+        {% if path == "grade_21" %}
+            전기공학과 2021학년도 정시 입시결과
+        {% elif path == "grade_20" %}
+            전기공학과 2020학년도 정시 입시결과
+        {% else %}
+            전기공학과 2019학년도 정시 입시결과
+        {% endif %}
+        <br>
         <img
-            src={{ grade_20 }}
-            alt="전기공학과 정시 2020"
-        />
-    </p>
-
-    <div><a href="#toc" id="s-2-3">2-3</a>. 정시 2019</div>
-    <p>
-        <img
-            src={{ grade_19 }}
-            alt="전기공학과 정시 2019"
+        src={{ "../static/images/" + data['images'][path] }}
+        alt="전기공학과 입시결과"
         />
     </p>
 </section>
@@ -69,7 +67,7 @@
 
     <div><a href="#toc" id="s-3-1">3-1</a>. Current Situation</div>
     <p>
-        <img src={{ after_graduation }} alt="전기공학과 취업통계" />
+        <img src={{ "../static/images/" + data['images']['after_graduation'] }} alt="전기공학과 취업통계" />
     </p>
 
     <div><a href="#toc" id="s-3-2">3-2</a>. After Graudation</div>
