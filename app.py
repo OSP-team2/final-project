@@ -27,7 +27,7 @@ def electronics():
     if form.validate_on_submit():
         path = form.grade.data
     
-    data = dept.find_one({ 'name': "school of electronics engineering" })
+    data = dept.find_one({ 'name': "School of Electronics Engineering" })
     
     return render_template('electronics.html', form=form, path=path, data=data)
 
@@ -39,7 +39,7 @@ def computer():
     if form.validate_on_submit():
         path = form.grade.data
         
-    data = dept.find_one({ 'name': "school of computer science and engineering" })
+    data = dept.find_one({ 'name': "School of Computer Science and Engineering" })
     
     return render_template('computer.html', form=form, path=path, data=data)
 
@@ -51,7 +51,7 @@ def electric():
     if form.validate_on_submit():
         path = form.grade.data
         
-    data = dept.find_one({ 'name': "department of electrical engineering" })
+    data = dept.find_one({ 'name': "Department of Electrical Engineering" })
     
     return render_template('electric.html', form=form, path=path, data=data)
 
