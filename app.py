@@ -26,7 +26,14 @@ def computer():
 
 @app.route('/electric')
 def electric():
-    return render_template('electric.html')
+    url = u'https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317404'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, "html.parser")
+
+    electric_intro = soup.select('.bg_gr')[0].text
+    electric_prop = soup.select('.bx1_wh')[2].text
+    electric_job = soup.select('.bx1_wh')[4].text
+    return render_template('electric.html', intro=electric_intro, prop=electric_prop, job=electric_job)
 
 @app.route('/mobile')
 def mobile():
