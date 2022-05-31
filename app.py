@@ -1,3 +1,5 @@
+import requests
+from bs4 import BeautifulSoup
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -12,6 +14,7 @@ def electronics():
 
 @app.route('/computer')
 def computer():
+
     return render_template('computer.html')
 
 @app.route('/electric')
