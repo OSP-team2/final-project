@@ -12,11 +12,11 @@
     background-color: #6fadcf;
     color: #000000;
     padding: 20px;
-    width: 243px;
+    width: 300px;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
-    font-size: 26px;
+    font-size: 30px;
 }
 #top-nav li a.current {
     background-color: #0d47a1;
