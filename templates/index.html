@@ -1,9 +1,19 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
 <!-- 이 사이에 html 작성 -->
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+<body>
+        <div class="img">
+            <div class="content">
+               <h5>경북대학교 IT대학은 4차 산업혁명 시대가 요구하는 창의적 문제 해결 능력,<br/>
+                IT분야의 전문적인 지식을 갖춘 융합형 인재 양성을 목표로 하고 있습니다.<br/></h5>
+            </div>
+            <div class="img-cover"></div>
+        </div>
 
-<main>IT대학</main>
-
-<!-- 이 사이에 html 작성 -->
+    <a href="https://ipsi2.uwayapply.com/calcsvc/2023/ns/knu/1/index.htm?">학생부 성적산출</a><br>
 {% endblock %}
+</body>

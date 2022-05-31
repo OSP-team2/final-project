@@ -23,7 +23,8 @@ for url in urls:
     jobs.append(soup.select('.bx1_wh')[4].text)
 
 electronics_doc = {
-    'name': "School of Electronics Engineering",
+    'name_en': "School of Electronics Engineering",
+    'name_ko': "전자공학부",
     'location': "IT1호관 409호",
     'number': '053-950-5506',
     'introduction': intros[0],
@@ -38,7 +39,8 @@ electronics_doc = {
 }
 
 computer_doc = {
-    'name': "School of Computer Science and Engineering",
+    'name_en': "School of Computer Science and Engineering",
+    'name_ko': "컴퓨터학부",
     'location': "공대9호관 413호",
     'number': '053-950-5550/6370',
     'introduction': intros[1],
@@ -53,7 +55,8 @@ computer_doc = {
 }
 
 electric_doc = {
-    'name': "Department of Electrical Engineering",
+    'name_en': "Department of Electrical Engineering",
+    'name_ko': "전기공학과",
     'location': "공대8호관 308호",
     'number': '053-950-5600', 
     'introduction': intros[2],
