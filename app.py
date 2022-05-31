@@ -1,8 +1,13 @@
-import requests
-from bs4 import BeautifulSoup
 from flask import Flask, render_template
+from pymongo import MongoClient
 
 app = Flask(__name__)
+
+client = MongoClient()
+db = client.it_college
+dept = db.dept
+
+img_path = "../static/images/"
 
 @app.route('/')
 def index():
@@ -10,38 +15,37 @@ def index():
 
 @app.route('/electronics')
 def electronics():
-    url = u'https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317397'
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, "html.parser")
-
-    electronics_intro = soup.select('.bg_gr')[0].text
-    electronics_prop = soup.select('.bx1_wh')[2].text
-    electronics_job = soup.select('.bx1_wh')[4].text
-
-    return render_template('electronics.html', intro=electronics_intro, prop=electronics_prop, job=electronics_job)
+    data = dept.find_one({ 'name': "school of electronics engineering" })
+    after_graduation = img_path + data['images']['after_graduation']
+    
+    grade_21 = img_path + data['images']['grade_21']
+    grade_20 = img_path + data['images']['grade_20']
+    grade_19 = img_path + data['images']['grade_19']
+    
+    return render_template('electronics.html', data=data, after_graduation=after_graduation, grade_21=grade_21,
+                           grade_20=grade_20, grade_19=grade_19)
 
 @app.route('/computer')
 def computer():
-    url = u'https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317400'
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, "html.parser")
-
-    computer_intro = soup.select('.bg_gr')[0].text
-    computer_prop = soup.select('.bx1_wh')[2].text
-    computer_job = soup.select('.bx1_wh')[4].text
+    data = dept.find_one({ 'name': "school of computer science and engineering" })
+    after_graduation = img_path + data['images']['after_graduation']
     
-    return render_template('computer.html', intro=computer_intro, prop=computer_prop, job=computer_job)
+    grade_21 = img_path + data['images']['grade_21']
+    grade_20 = img_path + data['images']['grade_20']
+    grade_19 = img_path + data['images']['grade_19']
+    return render_template('computer.html', data=data, after_graduation=after_graduation, grade_21=grade_21,
+                           grade_20=grade_20, grade_19=grade_19)
 
 @app.route('/electric')
 def electric():
-    url = u'https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317404'
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, "html.parser")
-
-    electric_intro = soup.select('.bg_gr')[0].text
-    electric_prop = soup.select('.bx1_wh')[2].text
-    electric_job = soup.select('.bx1_wh')[3].text
-    return render_template('electric.html', intro=electric_intro, prop=electric_prop, job=electric_job)
+    data = dept.find_one({ 'name': "department of electrical engineering" })
+    after_graduation = img_path + data['images']['after_graduation']
+    
+    grade_21 = img_path + data['images']['grade_21']
+    grade_20 = img_path + data['images']['grade_20']
+    grade_19 = img_path + data['images']['grade_19']
+    return render_template('electric.html', data=data, after_graduation=after_graduation, grade_21=grade_21,
+                           grade_20=grade_20, grade_19=grade_19)
 
 @app.route('/mobile')
 def mobile():
@@ -49,3 +53,4 @@ def mobile():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
