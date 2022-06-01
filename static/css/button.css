@@ -7,7 +7,7 @@
 #top-nav li {
     display: inline;
 }
-#top-nav li a {
+#top-nav li .dept {
     display: block;
     background-color: #6fadcf;
     color: #000000;
@@ -18,11 +18,11 @@
     font-weight: bold;
     font-size: 30px;
 }
-#top-nav li a.current {
+#top-nav li .dept.current {
     background-color: #0d47a1;
     color: white;
 }
-#top-nav li a:hover:not(.current) {
+#top-nav li .dept:hover:not(.current) {
     background-color: #0d47a1;
     color: white;
 }

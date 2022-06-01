@@ -1,17 +1,46 @@
  .main{
-                font-size:450%;
-                text-align:center;
-            }
-            .line{
-               border:15px solid #6FADCF;
-            }
-            .back{
+	font-size: 450%;
+        text-align: center;
+}
 
-                background-image: url();
-                background-repeat:no-repeat;
-                background-size: cover;
-            }
+.line{
+        border: 15px solid #6FADCF;
+	background-color: #6FADCF; 
+}
 
-.navbar__icons{
+.back{
+	background-image: url();
+	background-repeat:no-repeat;
+	background-size: cover;
+}
 
+h1 {
+	margin: 50px 0;;
+}
+
+h2 {
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+h3 {
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+h2, h3 {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+section img {
+	margin-top: 10px;
+}
+
+section li {
+	line-height: 2em;
 }

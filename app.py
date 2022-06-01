@@ -55,10 +55,6 @@ def electric():
     
     return render_template('electric.html', form=form, path=path, data=data)
 
-@app.route('/mobile')
-def mobile():
-    return render_template('mobile.html')
-
 if __name__ == '__main__':
     app.run(debug=True)
 

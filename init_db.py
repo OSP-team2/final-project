@@ -32,6 +32,8 @@ electronics_doc = {
     'job': jobs[0],
     'images': {
         'after_graduation': 'electronics.jpg',
+        'location': 'electronics_loc.jpg',
+        'wage': 'electronics_wage.jpg',
         'grade_21': 'electronics_grade_21.jpg',
         'grade_20': 'electronics_grade_20.jpg',
         'grade_19': 'electronics_grade_19.jpg'
@@ -48,6 +50,8 @@ computer_doc = {
     'job': jobs[1],
     'images': {
         'after_graduation': 'computer.jpg',
+        'location': 'computer_loc.jpg',
+        'wage': 'computer_wage.jpg',
         'grade_21': 'computer_grade_21.jpg',
         'grade_20': 'computer_grade_20.jpg',
         'grade_19': 'computer_grade_19.jpg'
@@ -64,6 +68,8 @@ electric_doc = {
     'job': jobs[2],
     'images': {
         'after_graduation': 'electric.jpg',
+        'location': 'electric_loc.jpg',
+        'wage': 'electric_wage.jpg',
         'grade_21': 'electric_grade_21.jpg',
         'grade_20': 'electric_grade_20.jpg',
         'grade_19': 'electric_grade_19.jpg'

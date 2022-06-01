@@ -5,16 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- CSS only -->
-
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
             crossorigin="anonymous"
         />
-
+	<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+
         <title>IT대학 소개</title>
     </head>
     <body>
@@ -22,24 +23,17 @@
              <div class ="line"></div>
             <div class="back">
             <div class="main">
-                <img src="../static/ITEEN.png">
+                <img src="../static/images/banner.jpg">
             </div>
             </div>
         </header>
-
-
-
-
                 <ul class="nav" id="top-nav">
-                    <img src="../static/images/it.png" alt=""width="300" height="85">
-                    <li><a class="navbar-brand" href="{{ url_for('index') }}">홈</a></li>
-                    <li><a class="navbar-brand" href="{{ url_for('electronics') }}">전자공학부</a></li>
-                    <li><a class="navbar-brand" href="{{ url_for('computer') }}">컴퓨터학부</a></li>
-                    <li><a class="navbar-brand" href="{{ url_for('electric') }}">전기공학과</a></li>
-                    <li><a class="navbar-brand" href="{{ url_for('mobile') }}">모바일공학과</a></li>
+		    <li><a href="{{ url_for('index') }}"><img src="../static/images/it.jpg" alt="" width="300" height="85"></a></li>
+		    <li><a class="navbar-brand dept" href="{{ url_for('electronics') }}">전자공학부</a></li>
+                    <li><a class="navbar-brand dept" href="{{ url_for('computer') }}">컴퓨터학부</a></li>
+                    <li><a class="navbar-brand dept" href="{{ url_for('electric') }}">전기공학과</a></li>
+                    <li><a class="navbar-brand dept" href="https://smobile.knu.ac.kr">모바일공학과</a></li>
                 </ul>
-
-
 
         {% block content %}
         <!-- 다른 컨텐츠들이 표시되는 부분 -->
