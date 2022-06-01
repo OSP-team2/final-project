@@ -1,4 +1,4 @@
-# KNU IT대학 소개
+# I-Teen
 
 ## Description
 대학 입시생 및 신입생들을 위한 경북대학교 IT대학 소개 웹사이트입니다.
@@ -10,9 +10,14 @@ MongoDB v3.6.8
 
 ## Quick Start
 1. 저장소를 클론해서 로컬 환경에 가져옵니다.
-   ```bash
-   git clone https://github.com/OSP-team2/final-project.git
-   ```
+   1. HTTPS
+      ```bash
+      git clone https://github.com/OSP-team2/final-project.git
+      ```
+   2. SSH
+      ```bash
+      git clone git@github.com:OSP-team2/final-project.git
+      ```
 
 2. final-project 폴더로 이동 후 init.sh를 실행합니다.
    ```bash
@@ -21,9 +26,14 @@ MongoDB v3.6.8
 
 ## Steb-by-step Start
 1. 저장소를 클론해서 로컬 환경에 가져옵니다.
-   ```bash
-   git clone https://github.com/OSP-team2/final-project.git
-   ```
+   1. HTTPS
+      ```bash
+      git clone https://github.com/OSP-team2/final-project.git
+      ```
+   2. SSH
+      ```bash
+      git clone git@github.com:OSP-team2/final-project.git
+      ```
 
 2. final-project 폴더로 이동 후 Python 가상환경을 만듭니다.
    ```bash
