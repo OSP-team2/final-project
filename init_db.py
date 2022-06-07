@@ -8,19 +8,39 @@ dept = db.dept
 
 dept.drop()
 
-urls = ["https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317397", "https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317400",
+
+
+dept_urls = ["https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317397", "https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317400",
         "https://home.knu.ac.kr/HOME/it/sub.htm?nav_code=it1623317404"]
+
 intros = []
 props = []
 jobs = []
 
-for url in urls:
+for url in dept_urls:
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
 
     intros.append(soup.select('.bg_gr')[0].text)
     props.append(soup.select('.bx1_wh')[2].text)
     jobs.append(soup.select('.bx1_wh')[4].text)
+    
+corp_urls = ["https://www.saramin.co.kr/zf_user/company-info/view-inner-salary?csn=UjVaSHBEcTFsdFUzQ3F4dDFTeXVKZz09",
+            "https://www.saramin.co.kr/zf_user/company-info/view-inner-salary?csn=NThFa2lRajFWNFhkcTFuNlRLSExXUT09",
+            "https://www.saramin.co.kr/zf_user/company-info/view-inner-salary?csn=RS9DMFhmN3g1R09ZTTA3aEw3SmtNUT09",
+            "https://www.saramin.co.kr/zf_user/company-info/view-inner-salary?csn=eHFqTEhJeHB6SDRFUkQ3RVl0dGlyQT09",
+            "https://www.saramin.co.kr/zf_user/company-info/view-inner-salary?csn=MVdTK1FaMUZSUGVDaXVpUUgrb29PZz09",
+            "https://www.saramin.co.kr/zf_user/company-info/view-inner-salary?csn=SjNOeE1FK2NkTnFvM0wvYzhwNU4vZz09"]
+
+corps = []
+pays = []
+
+for url in corp_urls:
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, "html.parser")
+
+    corps.append(soup.select('.name')[0].text)
+    pays.append(soup.select('.average_currency')[0].text)
 
 electronics_doc = {
     'name_en': "School of Electronics Engineering",
@@ -30,6 +50,8 @@ electronics_doc = {
     'introduction': intros[0],
     'property': props[0],
     'job': jobs[0],
+    'corporation_name' : [ corps[0], corps[1] ],
+    'corporation_pay' : [ pays[0], pays[1] ],
     'images': {
         'after_graduation': 'electronics.jpg',
         'location': 'electronics_loc.jpg',
@@ -48,6 +70,8 @@ computer_doc = {
     'introduction': intros[1],
     'property': props[1],
     'job': jobs[1],
+    'corporation_name' : [ corps[2], corps[3] ],
+    'corporation_pay' : [ pays[2], pays[3] ],
     'images': {
         'after_graduation': 'computer.jpg',
         'location': 'computer_loc.jpg',
@@ -66,6 +90,8 @@ electric_doc = {
     'introduction': intros[2],
     'property': props[2],
     'job': jobs[2],
+    'corporation_name' : [ corps[4], corps[5] ],
+    'corporation_pay' : [ pays[4], pays[5] ],
     'images': {
         'after_graduation': 'electric.jpg',
         'location': 'electric_loc.jpg',

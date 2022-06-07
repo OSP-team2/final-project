@@ -84,7 +84,7 @@
                 {% else %}
                     {{ data['name_ko'] }}(심화컴퓨터공학, 글로벌SW융합) 2019학년도 정시 입시결과
                 {% endif %}
-                <br />
+                <br  />
 
                 <img src={{ "../static/images/" + data['images'][path] }}
                 alt="컴퓨터학부 입시결과" />
@@ -121,13 +121,14 @@
             <p>{{ data['job'] }}</p>
 
             <h3 id="item-3-3">3-3. Wage</h3>
-            <img src={{ "../static/images/" + data['images']['wage'] }}
-            alt="컴퓨터학부 임금"/>
-	    <br />
-	    
-            <a href="https://www.youtube.com/channel/UCboYjEZtDixhOlbmNyJQJDQ"
-                >컴퓨터학부 유튜브 채널</a
-            >
+            <p>
+                <img src={{ "../static/images/" + data['images']['wage'] }}
+                alt="컴퓨터학부 임금" />
+                <ul>
+                    <li>{{ data['corporation_name'][0] }} 평균 임금: {{ data['corporation_pay'][0] }}</li>
+                    <li>{{ data['corporation_name'][1] }} 평균 임금: {{ data['corporation_pay'][1] }}</li>
+                </ul>
+            </p>
         </section>
     </div>
 </div>

@@ -39,7 +39,8 @@ form {
 }
 
 section img {
-	margin-top: 10px;
+	margin: 10px 0;
+	display: block;
 }
 
 section li {
